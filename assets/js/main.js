@@ -28,7 +28,7 @@ internId.addEventListener("click", (e) => {
     });
 });
 
-const allProfile = document.querySelector("#profile");
+const allProfile = document.querySelector("");
 const xhr = new XMLHttpRequest();
 
 const userName = [
@@ -52,20 +52,6 @@ const userName = [
   "gayathrihg",
   "kishorekumar-kp",
 ];
-
-// console.log(userName);
-
-xhr.onreadystatechange = function () {
-  //   console.log(this);
-
-  if (this.readyState === 4 && this.status === 200) {
-    // console.log(xhr.responseText);
-    allProfile.forEach((userName) => {
-      const repoLink = `https://api.github.com/users/${userName}/repos`;
-      //   console.log(repoLink);
-    });
-  }
-};
 
 xhr.open("GET", "https://api.github.com/users/<USER-NAME>/repos");
 xhr.send();
